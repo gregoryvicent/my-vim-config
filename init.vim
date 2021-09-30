@@ -18,10 +18,17 @@ set smartcase  " No ignorar mayúsculas si la palabra a buscar contiene mayúscu
 
 set spelllang=en,es  " Corregir palabras usando diccionarios en inglés y español
 
+let mapleader=" "
+
 nnoremap <F2> :NERDTree<CR>
 nnoremap <F2> :NERDTreeToggle<CR>
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
+
+nnoremap <C-p> :PlugInstall<CR>
+
+nmap <Leader>w :w<CR>
+nmap <Leader>q :q<CR>
 
 call plug#begin('~/.config/nvim/plugged')
 
@@ -29,26 +36,25 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'zenorocha/dracula-theme'
 
 "Plugins
+Plug 'jiangmiao/auto-pairs'
+Plug 'alvan/vim-closetag'
+Plug 'sheerun/vim-polyglot'
 Plug 'easymotion/vim-easymotion'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'valloric/youcompleteme'
 Plug 'vim-airline/vim-airline'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'yggdroot/indentline'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'scrooloose/nerdcommenter'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
 syntax on
-colorscheme peachpuff " Nombre del tema
+colorscheme dracula " Nombre del tema
 set bg=dark " Fondo del tema: light o dark
-
-let mapleader=" "
-
-nmap <Leader>s <Plug>(easymotion-s2)
-nmap <Leader>w :w<CR>
-nmap <Leader>q :q<CR>
 
 let NERDTreeQuitOnOpen=1
 let g:airline#extensions#tabline#enabled = 1 
